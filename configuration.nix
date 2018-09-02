@@ -48,12 +48,14 @@
   environment.shells = [pkgs.zsh];
   programs.zsh.enable = true;
 
+  virtualisation.docker.enable = true;
+
   users.users.mark =
     { isNormalUser = true;
       home = "/home/mark";
       shell = pkgs.zsh;
       description = "Mark Moore";
-      extraGroups = ["wheel" "networkmanager"];
+      extraGroups = ["wheel" "networkmanager" "docker"];
     };
 
   environment.systemPackages =
@@ -62,9 +64,14 @@
       pkgs.emacs
       pkgs.git
       pkgs.oh-my-zsh
+      pkgs.tmux
       pkgs.wget  
       pkgs.curl
       pkgs.unzip
+      pkgs.docker
+      pkgs.quassel
+      pkgs.silver-searcher
+      #pkgs._1password
     ];
 }
   
