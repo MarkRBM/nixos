@@ -15,6 +15,7 @@
       dates = "20:15";
     };
     useSandbox = true;
+    allowedUsers = ["@wheel"];
   };
 
   i18n = {
